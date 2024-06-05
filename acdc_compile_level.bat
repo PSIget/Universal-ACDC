@@ -1,2 +1,2 @@
-universal_acdc.pl -compile -level
+universal_acdc.exe -compile -level
 pause

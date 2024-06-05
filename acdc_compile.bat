@@ -1,2 +1,2 @@
-universal_acdc.pl -compile all -out new.spawn
+universal_acdc.exe -compile all -out new.spawn
 pause

@@ -1,2 +1,2 @@
-universal_acdc.pl -convert all.spawn -version 124
+universal_acdc.exe -convert all.spawn -version 124
 pause

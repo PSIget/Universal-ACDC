@@ -26,7 +26,7 @@ Place **all.spawn** (or **level.spawn**) and **game.graph** into the folder with
 
 ### Unpacking Spawn
 
-Command: `universal_acdc.pl -d <spawn_file> [common_options]`
+Command: `universal_acdc -d <spawn_file> [common_options]`
 
 - `-d <spawn_file>` — path to the spawn file.
 - `common_options` — common options (described below).
@@ -35,7 +35,7 @@ If an "unknown section" error occurs when unpacking mod spawns, use the `-scan` 
 
 ### Packing Spawn
 
-Command: `universal_acdc.pl -compile <dir> [-idx <index_file>] [-f <flag1,flag2,...>] [common_options]`
+Command: `universal_acdc -compile <dir> [-idx <index_file>] [-f <flag1,flag2,...>] [common_options]`
 
 - `-compile <dir>` — folder with the unpacked spawn.
 - `-idx <index_file>` — creates a config with object sections.
@@ -43,7 +43,7 @@ Command: `universal_acdc.pl -compile <dir> [-idx <index_file>] [-f <flag1,flag2,
 
 ### Converting Spawn
 
-Command: `universal_acdc.pl -convert <file> -version <new_version> [-ini <file>] [common_options]`
+Command: `universal_acdc -convert <file> -version <new_version> [-ini <file>] [common_options]`
 
 - `-convert <file>` — file for conversion (packed or unpacked).
 - `-version <new_version>` — new spawn version.

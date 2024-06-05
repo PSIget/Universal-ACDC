@@ -1,2 +1,2 @@
-universal_acdc.pl -split all.spawn -way -nofatal
+universal_acdc.exe -split all.spawn -way -nofatal
 pause

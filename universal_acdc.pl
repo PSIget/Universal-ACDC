@@ -1901,34 +1901,34 @@ sub usage {
 	BAD CALL SYNTAX!
 S.T.A.L.K.E.R. all.spawn compiler/decompiler
 
-Decompilation: universal_acdc.pl -d <spawn_file> [common_options]
+Decompilation: universal_acdc -d <spawn_file> [common_options]
 	-d <spawn_file> - path to spawn file
 	common_options - see below
 
-Compilation: universal_acdc.pl -compile <dir> [-idx <index_file>] [-f <flag1,flag2,...>] [common_options]
+Compilation: universal_acdc -compile <dir> [-idx <index_file>] [-f <flag1,flag2,...>] [common_options]
 	-compile <dir> - path to folder with unpacked spawn.
 	-idx <index_file> - create a file with entity id's
 	common_options - see below
 
-Converting: universal_acdc.pl -convert <file> -version <new_version> [common_options]
+Converting: universal_acdc -convert <file> -version <new_version> [common_options]
 	-convert <file> - file to convert
 	-version <new_version> - new spawn version
 	common_options - see below
 
-Parsing vertices: universal_acdc.pl -parse <file> -old <old_gvid0> -new <new_gvid0> [-way] [common_options]
+Parsing vertices: universal_acdc -parse <file> -old <old_gvid0> -new <new_gvid0> [-way] [common_options]
 	-parse <file> - file to parse
 	-old <old_gvid0> - old start game_vertex_id
 	-new <new_gvid0> - new start game_vertex_id
 	-way - force way parsing
 	common_options - see below
 
-Splitting spawn: universal_acdc.pl -split <file> [-use_graph] [-way] [common_options]
+Splitting spawn: universal_acdc -split <file> [-use_graph] [-way] [common_options]
 	-split <file> - file to split
 	-use_graph - use game.graph for graph point recovering
 	-way - force level.game creating
 	common_options - see below
 
-Compare ltx files: universal_acdc.pl -compare <file1,file2> [common_options]
+Compare ltx files: universal_acdc -compare <file1,file2> [common_options]
 	-compare <file1,file2> - files to compare
 	common_options - see below
 

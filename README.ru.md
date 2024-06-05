@@ -26,7 +26,7 @@
 
 ### Распаковка Спавна
 
-Команда: `universal_acdc.pl -d <spawn_file> [common_options]`
+Команда: `universal_acdc -d <spawn_file> [common_options]`
 
 - `-d <spawn_file>` — путь до спавна.
 - `common_options` — общие опции (описаны ниже).
@@ -35,7 +35,7 @@
 
 ### Запаковка Спавна
 
-Команда: `universal_acdc.pl -compile <dir> [-idx <index_file>] [-f <flag1,flag2,...>] [common_options]`
+Команда: `universal_acdc -compile <dir> [-idx <index_file>] [-f <flag1,flag2,...>] [common_options]`
 
 - `-compile <dir>` — папка с распакованным спавном.
 - `-idx <index_file>` — создает конфиг с секциями объектов.
@@ -43,7 +43,7 @@
 
 ### Конвертирование Спавна
 
-Команда: `universal_acdc.pl -convert <file> -version <new_version> [-ini <file>] [common_options]`
+Команда: `universal_acdc -convert <file> -version <new_version> [-ini <file>] [common_options]`
 
 - `-convert <file>` — файл для конвертации (запакованный или распакованный).
 - `-version <new_version>` — новая версия спавна.

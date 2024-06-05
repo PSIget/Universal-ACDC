@@ -90,7 +90,7 @@ sub export_properties {
 	my $comment = shift;
 	my $container = shift;
 
-#print $container->{name}."\n";	
+#print $container->{name}."\n";
 	my $fh = $self->{fh};
 	print $fh "\n; $comment properties\n" if defined $comment;
 	foreach my $p (@_) {
@@ -141,15 +141,15 @@ sub _export_string {
 sub _export_vector {
 	my ($fh, $container, $p) = @_;
 	if ($p->{type} =~ /dumb/) {
-		printf $fh "$p->{name} = ".unpack('H*', $container->{$p->{name}})."\n";	
+		printf $fh "$p->{name} = ".unpack('H*', $container->{$p->{name}})."\n";
 	} else {
-		return if (@{$p->{default}} && comp_arrays($container, $p));
+		return if (@{$p->{default}}) && comp_arrays($container, $p);
 		print $fh "$p->{name} = ", join(', ', @{$container->{$p->{name}}}), "\n";
 	}
 }
 sub _export_shape {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	my $i = 0;
@@ -183,13 +183,13 @@ sub _export_skeleton {
 		my $id = "bone_$i";
 		print $fh "$id:ph_position = ".join(',', @{$bone->{ph_position}})."\n";
 		print $fh "$id:ph_rotation = ".join(',', @{$bone->{ph_rotation}})."\n";
-		print $fh "$id:enabled = $bone->{enabled}\n\n";		
+		print $fh "$id:enabled = $bone->{enabled}\n\n";
 		$i++;
 	}
 }
 sub _export_supplies {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -206,7 +206,7 @@ sub _export_supplies {
 }
 sub _export_artefact_spawns {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -221,7 +221,7 @@ sub _export_artefact_spawns {
 }
 sub _export_ordered_artefacts {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $i = 0;
 	my $k = 0;
 	my $count = $#{$container->{$p->{name}}} + 1;
@@ -259,7 +259,7 @@ sub _export_ctime {
 }
 sub _export_jobs {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -283,7 +283,7 @@ sub _export_npc_info {
 }
 sub _export_npc_info_old {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -303,7 +303,7 @@ sub _export_npc_info_old {
 }
 sub _export_npc_info_soc {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -340,7 +340,7 @@ sub _export_npc_info_cop {
 }
 sub _export_covers {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -357,7 +357,7 @@ sub _export_covers {
 }
 sub _export_squads {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh "\n; squads\n";
 	print $fh $p->{name}.' = '.$count."\n";
@@ -392,7 +392,7 @@ sub _export_times {
 }
 sub _export_sim_squads {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh $p->{name}.' = '.$count."\n";
 	return if $count == 0;
@@ -411,11 +411,11 @@ sub _export_sim_squads {
 		}
 		print $fh "\n";
 		$i++;
-	}	
+	}
 }
 sub _export_sim_squad_generic {
 	my ($fh, $squad, $id) = @_;
-	
+
 	print $fh "$id:smart_id = $squad->{smart_id}\n";
 	print $fh "$id:assigned_target_smart_id = $$squad{assigned_target_smart_id}\n";
 	print $fh "$id:sim_combat_id = $$squad{sim_combat_id}\n";
@@ -423,13 +423,13 @@ sub _export_sim_squad_generic {
 	print $fh "$id:random_tasks = ".join(',', @{$squad->{random_tasks}})."\n";
 	print $fh "$id:npc_count = $squad->{npc_count}\n";
 	print $fh "$id:squad_power = $$squad{squad_power}\n";
-	print $fh "$id:commander_id = $$squad{commander_id}\n";	
-	print $fh "$id:squad_npc = ".join(',', @{$squad->{squad_npc}})."\n";	
+	print $fh "$id:commander_id = $$squad{commander_id}\n";
+	print $fh "$id:squad_npc = ".join(',', @{$squad->{squad_npc}})."\n";
 	print $fh "$id:spoted_shouted = $squad->{spoted_shouted}\n";
-	print $fh "$id:squad_power = $$squad{squad_power}\n";	
+	print $fh "$id:squad_power = $$squad{squad_power}\n";
 	_export_ctime($fh, "$id:last_action_timer", $$squad{last_action_timer});
-	print $fh "$id:squad_attack_power = $$squad{squad_attack_power}\n";		
-	print $fh "$id:class = $$squad{class}\n";		
+	print $fh "$id:squad_attack_power = $$squad{squad_attack_power}\n";
+	print $fh "$id:class = $$squad{class}\n";
 	if (defined $squad->{class}) {
 		if ($squad->{class} == 1) {
 			#sim_attack_point
@@ -443,14 +443,14 @@ sub _export_sim_squad_generic {
 			_export_ctime($fh, "$id:begin_time", $$squad{begin_time});
 		}
 	}
-	
+
 	print $fh "$id:items_spawned = $squad->{items_spawned}\n";
 	_export_ctime($fh, "$id:bring_item_inited_time", $$squad{bring_item_inited_time});
-	_export_ctime($fh, "$id:recover_item_inited_time", $$squad{recover_item_inited_time});	
+	_export_ctime($fh, "$id:recover_item_inited_time", $$squad{recover_item_inited_time});
 }
 sub _export_inited_tasks {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh "\n; inited tasks\n";
 	print $fh $p->{name}.' = '.$count."\n";
@@ -480,10 +480,10 @@ sub _export_CGeneralTask {
 	my ($fh, $task, $id) = @_;
 	print $fh "$id:entity_id = $task->{entity_id}\n";
 	print $fh "$id:prior = $task->{prior}\n";
-	print $fh "$id:status = $task->{status}\n";	
+	print $fh "$id:status = $task->{status}\n";
 	print $fh "$id:actor_helped = $task->{actor_helped}\n";
 	print $fh "$id:community = $task->{community}\n";
-	print $fh "$id:actor_come = $task->{actor_come}\n";	
+	print $fh "$id:actor_come = $task->{actor_come}\n";
 	print $fh "$id:actor_ignore = $task->{actor_ignore}\n";
 	_export_ctime($fh, "$id:inited_time", $task->{inited_time});
 }
@@ -526,7 +526,7 @@ sub _export_CBringItemTask {
 	my $j = 0;
 	foreach my $item (@{$task->{requested_items}}) {
 		print $fh "$id:item_id_$j = $item->{id}\n";
-		print $fh "$id:items_$j = ".join(',', @{$item->{requested_items}})."\n";	
+		print $fh "$id:items_$j = ".join(',', @{$item->{requested_items}})."\n";
 		$j++;
 	}
 }
@@ -561,7 +561,7 @@ sub _export_CEliminateSquadTask {
 }
 sub _export_inited_find_upgrade_tasks {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh "\n; inited 'find upgrade' tasks\n";
 	print $fh $p->{name}.' = '.$count."\n";
@@ -582,7 +582,7 @@ sub _export_inited_find_upgrade_tasks {
 }
 sub _export_rewards {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh "\n; rewards\n";
 	print $fh $p->{name}.' = '.$count."\n";
@@ -600,14 +600,14 @@ sub _export_rewards {
 				print $fh "$id:reward_$j:item_name = $reward->{item_name}\n";
 			}
 			$j++;
-		}		
+		}
 		$i++;
 	}
 	print $fh "\n";
 }
 sub _export_minigames {
 	my ($fh, $container, $p) = @_;
-	
+
 	my $count = $#{$container->{$p->{name}}} + 1;
 	print $fh "\n; minigames\n";
 	print $fh $p->{name}.' = '.$count."\n";
@@ -627,7 +627,7 @@ sub _export_minigames {
 			print $fh "$id:param_champion_multiplier = $minigame->{param_champion_multiplier}\n";
 			print $fh "$id:param_selected = $minigame->{param_selected}\n";
 			print $fh "$id:param_game_type = $minigame->{param_game_type}\n";
-			print $fh "$id:high_score = $minigame->{high_score}\n";		
+			print $fh "$id:high_score = $minigame->{high_score}\n";
 			print $fh "$id:timer = $minigame->{timer}\n";
 			print $fh "$id:time_out = $minigame->{time_out}\n";
 			print $fh "$id:killed_counter = $minigame->{killed_counter}\n";
@@ -636,137 +636,137 @@ sub _export_minigames {
 			print $fh "$id:param_game_type = $minigame->{param_game_type}\n";
 			print $fh "$id:param_wpn_type = $minigame->{param_wpn_type}\n";
 			print $fh "$id:param_stand_way = $minigame->{param_stand_way}\n";
-			print $fh "$id:param_look_way = $minigame->{param_look_way}\n";		
+			print $fh "$id:param_look_way = $minigame->{param_look_way}\n";
 			print $fh "$id:param_stand_way_back = $minigame->{param_stand_way_back}\n";
 			print $fh "$id:param_look_way_back = $minigame->{param_look_way_back}\n";
 			print $fh "$id:param_obj_name = $minigame->{param_obj_name}\n";
 			print $fh "$id:param_is_u16 = $minigame->{param_is_u16}\n";
 			if ($minigame->{param_is_u16} == 0) {
-				print $fh "$id:param_win = $minigame->{param_win}\n";	
+				print $fh "$id:param_win = $minigame->{param_win}\n";
 			} else {
-				print $fh "$id:param_win = $minigame->{param_win}\n";	
-			}	
+				print $fh "$id:param_win = $minigame->{param_win}\n";
+			}
 			print $fh "$id:param_distance = $minigame->{param_distance}\n";
 			print $fh "$id:param_ammo = $minigame->{param_ammo}\n";
-			print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";		
+			print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
 			my $j = 0;
 			foreach my $target (@{$minigame->{targets}}) {
-				print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-				$j++;				
+				print $fh "$id:target_$j = ".join(',', @$target)."\n";
+				$j++;
 			}
 			print $fh "$id:param_target_counter = $minigame->{param_target_counter}\n";
-			print $fh "$id:inventory_items = ".join(',', @{$minigame->{inventory_items}})."\n";		
+			print $fh "$id:inventory_items = ".join(',', @{$minigame->{inventory_items}})."\n";
 			print $fh "$id:prev_time = $minigame->{prev_time}\n";
 			print $fh "$id:type = $minigame->{type}\n";
-			
+
 			if ($minigame->{type} eq 'training' || $minigame->{type} eq 'points') {
 				print $fh "$id:win = $minigame->{win}\n";
-				print $fh "$id:ammo = $minigame->{ammo}\n";		
+				print $fh "$id:ammo = $minigame->{ammo}\n";
 				print $fh "$id:cur_target = $minigame->{cur_target}\n";
 				print $fh "$id:points = $minigame->{points}\n";
 				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
 			} elsif ($minigame->{type} eq 'count') {
 				print $fh "$id:wpn_type = $minigame->{wpn_type}\n";
-				print $fh "$id:win = $minigame->{win}\n";		
-				print $fh "$id:ammo = $minigame->{ammo}\n";		
-				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";						
+				print $fh "$id:win = $minigame->{win}\n";
+				print $fh "$id:ammo = $minigame->{ammo}\n";
+				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
 				my $j = 0;
 				foreach my $target (@{$minigame->{targets}}) {
-					print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}				
+					print $fh "$id:target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				print $fh "$id:distance = $minigame->{distance}\n";
-				print $fh "$id:cur_target = $minigame->{cur_target}\n";		
+				print $fh "$id:cur_target = $minigame->{cur_target}\n";
 				print $fh "$id:points = $minigame->{points}\n";
 				print $fh "$id:scored = $minigame->{scored}\n";
-				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";						
+				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
 			} elsif ($minigame->{type} eq 'three_hit_training') {
 				print $fh "$id:wpn_type = $minigame->{wpn_type}\n";
-				print $fh "$id:win = $minigame->{win}\n";		
+				print $fh "$id:win = $minigame->{win}\n";
 				print $fh "$id:ammo = $minigame->{ammo}\n";
-				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";		
+				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
 				my $j = 0;
 				foreach my $target (@{$minigame->{targets}}) {
-					print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}		
+					print $fh "$id:target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				print $fh "$id:distance = $minigame->{distance}\n";
-				print $fh "$id:cur_target = $minigame->{cur_target}\n";		
+				print $fh "$id:cur_target = $minigame->{cur_target}\n";
 				print $fh "$id:points = $minigame->{points}\n";
 				print $fh "$id:scored = $minigame->{scored}\n";
-				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";	
+				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
 				print $fh "$id:target_counter = $minigame->{target_counter}\n";
-				print $fh "$id:target_hit = $minigame->{target_hit}\n";						
-			} elsif ($minigame->{type} eq 'all_targets') {			
+				print $fh "$id:target_hit = $minigame->{target_hit}\n";
+			} elsif ($minigame->{type} eq 'all_targets') {
 				print $fh "$id:wpn_type = $minigame->{wpn_type}\n";
-				print $fh "$id:win = $minigame->{win}\n";		
+				print $fh "$id:win = $minigame->{win}\n";
 				print $fh "$id:ammo = $minigame->{ammo}\n";
-				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";		
-				print $fh "$id:hitted_targets = ".($#{$minigame->{hitted_targets}} + 1)."\n";		
+				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
+				print $fh "$id:hitted_targets = ".($#{$minigame->{hitted_targets}} + 1)."\n";
 				my $j = 0;
 				foreach my $target (@{$minigame->{targets}}) {
-					print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}	
+					print $fh "$id:target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				foreach my $target (@{$minigame->{hitted_targets}}) {
-					print $fh "$id:hitted_target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}					
+					print $fh "$id:hitted_target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
-				print $fh "$id:time = $minigame->{time}\n";		
+				print $fh "$id:time = $minigame->{time}\n";
 				print $fh "$id:target_counter = $minigame->{target_counter}\n";
 				print $fh "$id:prev_time = $minigame->{prev_time}\n";
-				print $fh "$id:more_targets = $minigame->{more_targets}\n";	
+				print $fh "$id:more_targets = $minigame->{more_targets}\n";
 				print $fh "$id:last_target = $minigame->{last_target}\n";
 			} elsif ($minigame->{type} eq 'count_on_time') {
 				print $fh "$id:wpn_type = $minigame->{wpn_type}\n";
-				print $fh "$id:win = $minigame->{win}\n";		
+				print $fh "$id:win = $minigame->{win}\n";
 				print $fh "$id:ammo = $minigame->{ammo}\n";
-				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";		
+				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
 				my $j = 0;
 				foreach my $target (@{$minigame->{targets}}) {
-					print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}					
+					print $fh "$id:target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				print $fh "$id:distance = $minigame->{distance}\n";
-				print $fh "$id:cur_target = $minigame->{cur_target}\n";		
+				print $fh "$id:cur_target = $minigame->{cur_target}\n";
 				print $fh "$id:points = $minigame->{points}\n";
 				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
-				print $fh "$id:time = $minigame->{time}\n";	
+				print $fh "$id:time = $minigame->{time}\n";
 				print $fh "$id:prev_time = $minigame->{prev_time}\n";
 			} elsif ($minigame->{type} eq 'ten_targets') {
 				print $fh "$id:wpn_type = $minigame->{wpn_type}\n";
-				print $fh "$id:win = $minigame->{win}\n";		
+				print $fh "$id:win = $minigame->{win}\n";
 				print $fh "$id:ammo = $minigame->{ammo}\n";
-				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";		
+				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
 				my $j = 0;
 				foreach my $target (@{$minigame->{targets}}) {
-					print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}					
+					print $fh "$id:target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				print $fh "$id:distance = $minigame->{distance}\n";
-				print $fh "$id:cur_target = $minigame->{cur_target}\n";		
+				print $fh "$id:cur_target = $minigame->{cur_target}\n";
 				print $fh "$id:points = $minigame->{points}\n";
 				print $fh "$id:scored = $minigame->{scored}\n";
-				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";	
-				print $fh "$id:time = $minigame->{time}\n";	
-				print $fh "$id:prev_time = $minigame->{prev_time}\n";			
+				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
+				print $fh "$id:time = $minigame->{time}\n";
+				print $fh "$id:prev_time = $minigame->{prev_time}\n";
 			} elsif ($minigame->{type} eq 'two_seconds_standing') {
 				print $fh "$id:wpn_type = $minigame->{wpn_type}\n";
-				print $fh "$id:win = $minigame->{win}\n";		
+				print $fh "$id:win = $minigame->{win}\n";
 				print $fh "$id:ammo = $minigame->{ammo}\n";
-				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";		
+				print $fh "$id:targets = ".($#{$minigame->{targets}} + 1)."\n";
 				my $j = 0;
 				foreach my $target (@{$minigame->{targets}}) {
-					print $fh "$id:target_$j = ".join(',', @$target)."\n";	
-					$j++;				
-				}					
+					print $fh "$id:target_$j = ".join(',', @$target)."\n";
+					$j++;
+				}
 				print $fh "$id:distance = $minigame->{distance}\n";
-				print $fh "$id:cur_target = $minigame->{cur_target}\n";		
+				print $fh "$id:cur_target = $minigame->{cur_target}\n";
 				print $fh "$id:points = $minigame->{points}\n";
-				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";	
-				print $fh "$id:time = $minigame->{time}\n";	
-				print $fh "$id:prev_time = $minigame->{prev_time}\n";			
+				print $fh "$id:ammo_counter = $minigame->{ammo_counter}\n";
+				print $fh "$id:time = $minigame->{time}\n";
+				print $fh "$id:prev_time = $minigame->{prev_time}\n";
 			}
 		}
 		$i++;
@@ -779,7 +779,7 @@ sub import_properties {
 	my $self = shift;
 	my $section = shift;
 	my $container = shift;
-	
+
 	fail("$section is undefined") unless defined $self->{sections_hash}{$section};
 #	print "[$section]\n";
 	foreach my $p (@_) {
@@ -818,7 +818,7 @@ sub _import_scalar {
 		$container->{$p->{name}} = $value;
 	} else {
 		$container->{$p->{name}} = $p->{default};
-	}	
+	}
 }
 sub _import_string {
 	my ($self, $value, $container, $p) = @_;
@@ -827,7 +827,7 @@ sub _import_string {
 sub _import_vector {
 	my ($self, $value, $container, $p) = @_;
 	if ($p->{type} =~ /dumb/) {
-		$container->{$p->{name}} = pack('H*', $value);	
+		$container->{$p->{name}} = pack('H*', $value);
 	} else {
 		@{$container->{$p->{name}}} = defined $value ? split(/,\s*/, $value) : @{$p->{default}};
 	}
@@ -1054,7 +1054,7 @@ sub _import_sim_squad_generic {
 	$squad->{npc_count} = $self->value($section, "sim_squad_$i:npc_count");
 	$squad->{squad_power} = $self->value($section, "sim_squad_$i:squad_power");
 	$squad->{commander_id} = $self->value($section, "sim_squad_$i:commander_id");
-	@{$squad->{squad_npc}} = split /,/, $self->value($section, "sim_squad_$i:squad_npc");	
+	@{$squad->{squad_npc}} = split /,/, $self->value($section, "sim_squad_$i:squad_npc");
 	$squad->{spoted_shouted} = $self->value($section, "sim_squad_$i:spoted_shouted");
 	$squad->{squad_power} = $self->value($section, "sim_squad_$i:squad_power");
 	$squad->{last_action_timer} = _import_ctime($self->value($section, "sim_squad_$i:last_action_timer"));
@@ -1193,12 +1193,12 @@ sub _import_CEliminateSquadTask {
 }
 sub _import_inited_find_upgrade_tasks {
 	my ($self, $section, $value, $container, $p) = @_;
-	
+
 	return if (!defined $value or $value == 0);
 	for (my $i = 0; $i < $value; $i++) {
 		my $task = {};
 		$task->{k} = $self->value($section, "task_$i:k");
-		my $count = $self->value($section, "task_$i:subtasks"); 
+		my $count = $self->value($section, "task_$i:subtasks");
 		for (my $j = 0; $j < $count; $j++) {
 			my $subtask = {};
 			$subtask->{k} = $self->value($section, "task_$i:kk_$j");
@@ -1210,12 +1210,12 @@ sub _import_inited_find_upgrade_tasks {
 }
 sub _import_rewards {
 	my ($self, $section, $value, $container, $p) = @_;
-	
+
 	return if (!defined $value or $value == 0);
 	for (my $i = 0; $i < $value; $i++) {
 		my $comm = {};
 		$comm->{community} = $self->value($section, "community_$i:community_name");
-		my $count = $self->value($section, "community_$i:rewards"); 
+		my $count = $self->value($section, "community_$i:rewards");
 		for (my $j = 0; $j < $count; $j++) {
 			my $reward = {};
 			if (defined $self->value($section, "community_$i:reward_$j:money_amount")) {
@@ -1224,13 +1224,13 @@ sub _import_rewards {
 				$reward->{item_name} = $self->value($section, "community_$i:reward_$j:item_name");
 			}
 			push @{$comm->{rewards}}, $reward;
-		}	
+		}
 		push @{$container->{$p->{name}}}, $comm;
 	}
 }
 sub _import_minigames {
 	my ($self, $section, $value, $container, $p) = @_;
-	
+
 	return if (!defined $value or $value == 0);
 	for (my $i = 0; $i < $value; $i++) {
 		my $minigame = {};
@@ -1240,24 +1240,24 @@ sub _import_minigames {
 		if ($minigame->{profile} eq 'CMGCrowKiller') {
 			$minigame->{param_highscore} = $self->value($section, "minigame_$i:param_highscore");
 			$minigame->{param_timer} = $self->value($section, "minigame_$i:param_timer");
-			$minigame->{param_win} = $self->value($section, "minigame_$i:param_win");		
+			$minigame->{param_win} = $self->value($section, "minigame_$i:param_win");
 			@{$minigame->{param_crows_to_kill}} = split /,/, $self->value($section, "minigame_$i:param_crows_to_kill");
 			$minigame->{param_money_multiplier} = $self->value($section, "minigame_$i:param_money_multiplier");
-			$minigame->{param_champion_multiplier} = $self->value($section, "minigame_$i:param_champion_multiplier");		
+			$minigame->{param_champion_multiplier} = $self->value($section, "minigame_$i:param_champion_multiplier");
 			$minigame->{param_selected} = $self->value($section, "minigame_$i:param_selected");
 			$minigame->{param_game_type} = $self->value($section, "minigame_$i:param_game_type");
 			$minigame->{high_score} = $self->value($section, "minigame_$i:high_score");
 			$minigame->{timer} = $self->value($section, "minigame_$i:timer");
 			$minigame->{time_out} = $self->value($section, "minigame_$i:time_out");
-			$minigame->{killed_counter} = $self->value($section, "minigame_$i:killed_counter");		
-			$minigame->{win} = $self->value($section, "minigame_$i:win");	
+			$minigame->{killed_counter} = $self->value($section, "minigame_$i:killed_counter");
+			$minigame->{win} = $self->value($section, "minigame_$i:win");
 		} elsif ($minigame->{profile} eq 'CMGShooting') {
 			$minigame->{param_game_type} = $self->value($section, "minigame_$i:param_game_type");
 			$minigame->{param_wpn_type} = $self->value($section, "minigame_$i:param_wpn_type");
 			$minigame->{param_stand_way} = $self->value($section, "minigame_$i:param_stand_way");
-			$minigame->{param_look_way} = $self->value($section, "minigame_$i:param_look_way");		
+			$minigame->{param_look_way} = $self->value($section, "minigame_$i:param_look_way");
 			$minigame->{param_stand_way_back} = $self->value($section, "minigame_$i:param_stand_way_back");
-			$minigame->{param_look_way_back} = $self->value($section, "minigame_$i:param_look_way_back");		
+			$minigame->{param_look_way_back} = $self->value($section, "minigame_$i:param_look_way_back");
 			$minigame->{param_obj_name} = $self->value($section, "minigame_$i:param_obj_name");
 			$minigame->{param_is_u16} = $self->value($section, "minigame_$i:param_is_u16");
 			$minigame->{param_win} = $self->value($section, "minigame_$i:param_win");
@@ -1268,48 +1268,48 @@ sub _import_minigames {
 				push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
 			}
 			$minigame->{param_target_counter} = $self->value($section, "minigame_$i:param_target_counter");
-			@{$minigame->{inventory_items}} = split /,/, $self->value($section, "minigame_$i:inventory_items");	
-			$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");	
-			$minigame->{type} = $self->value($section, "minigame_$i:type");	
+			@{$minigame->{inventory_items}} = split /,/, $self->value($section, "minigame_$i:inventory_items");
+			$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");
+			$minigame->{type} = $self->value($section, "minigame_$i:type");
 			if ($minigame->{type} eq 'training' || $minigame->{type} eq 'points') {
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
 				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
-				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");		
+				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");
 				$minigame->{points} = $self->value($section, "minigame_$i:points");
-				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");		
+				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
 				$minigame->{param_obj_name} = $self->value($section, "minigame_$i:param_obj_name");
 			} elsif ($minigame->{type} eq 'count') {
 				$minigame->{wpn_type} = $self->value($section, "minigame_$i:wpn_type");
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
-				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");		
+				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
 				my $count = $self->value($section, "minigame_$i:targets");
 				for (my $j = 0; $j < $count; $j++) {
 					push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
 				}
 				$minigame->{distance} = $self->value($section, "minigame_$i:distance");
-				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");		
+				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");
 				$minigame->{points} = $self->value($section, "minigame_$i:points");
-				$minigame->{scored} = $self->value($section, "minigame_$i:scored");		
-				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");				
+				$minigame->{scored} = $self->value($section, "minigame_$i:scored");
+				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
 			} elsif ($minigame->{type} eq 'three_hit_training') {
 				$minigame->{wpn_type} = $self->value($section, "minigame_$i:wpn_type");
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
-				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");		
+				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
 				my $count = $self->value($section, "minigame_$i:targets");
 				for (my $j = 0; $j < $count; $j++) {
 					push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
 				}
 				$minigame->{distance} = $self->value($section, "minigame_$i:distance");
-				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");		
+				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");
 				$minigame->{points} = $self->value($section, "minigame_$i:points");
-				$minigame->{scored} = $self->value($section, "minigame_$i:scored");		
-				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");				
-				$minigame->{target_counter} = $self->value($section, "minigame_$i:target_counter");		
-				$minigame->{target_hit} = $self->value($section, "minigame_$i:target_hit");									
-			} elsif ($minigame->{type} eq 'all_targets') {			
+				$minigame->{scored} = $self->value($section, "minigame_$i:scored");
+				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
+				$minigame->{target_counter} = $self->value($section, "minigame_$i:target_counter");
+				$minigame->{target_hit} = $self->value($section, "minigame_$i:target_hit");
+			} elsif ($minigame->{type} eq 'all_targets') {
 				$minigame->{wpn_type} = $self->value($section, "minigame_$i:wpn_type");
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
-				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");		
+				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
 				my $count = $self->value($section, "minigame_$i:targets");
 				for (my $j = 0; $j < $count; $j++) {
 					push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
@@ -1319,54 +1319,54 @@ sub _import_minigames {
 					push @{$minigame->{hitted_targets}}, \split(/,/, $self->value($section, "minigame_$i:hitted_target_$j"));
 				}
 				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
-				$minigame->{time} = $self->value($section, "minigame_$i:time");		
+				$minigame->{time} = $self->value($section, "minigame_$i:time");
 				$minigame->{target_counter} = $self->value($section, "minigame_$i:target_counter");
-				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");		
-				$minigame->{more_targets} = $self->value($section, "minigame_$i:more_targets");				
+				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");
+				$minigame->{more_targets} = $self->value($section, "minigame_$i:more_targets");
 				$minigame->{last_target} = $self->value($section, "minigame_$i:last_target");
 			} elsif ($minigame->{type} eq 'count_on_time') {
 				$minigame->{wpn_type} = $self->value($section, "minigame_$i:wpn_type");
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
-				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");		
+				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
 				my $count = $self->value($section, "minigame_$i:targets");
 				for (my $j = 0; $j < $count; $j++) {
 					push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
 				}
 				$minigame->{distance} = $self->value($section, "minigame_$i:distance");
-				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");		
+				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");
 				$minigame->{points} = $self->value($section, "minigame_$i:points");
-				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");		
-				$minigame->{time} = $self->value($section, "minigame_$i:time");				
+				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
+				$minigame->{time} = $self->value($section, "minigame_$i:time");
 				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");
 			} elsif ($minigame->{type} eq 'ten_targets') {
 				$minigame->{wpn_type} = $self->value($section, "minigame_$i:wpn_type");
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
-				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");		
+				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
 				my $count = $self->value($section, "minigame_$i:targets");
 				for (my $j = 0; $j < $count; $j++) {
 					push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
 				}
 				$minigame->{distance} = $self->value($section, "minigame_$i:distance");
-				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");		
+				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");
 				$minigame->{points} = $self->value($section, "minigame_$i:points");
 				$minigame->{scored} = $self->value($section, "minigame_$i:scored");
-				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");		
-				$minigame->{time} = $self->value($section, "minigame_$i:time");				
-				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");	
+				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
+				$minigame->{time} = $self->value($section, "minigame_$i:time");
+				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");
 			} elsif ($minigame->{type} eq 'two_seconds_standing') {
 				$minigame->{wpn_type} = $self->value($section, "minigame_$i:wpn_type");
 				$minigame->{win} = $self->value($section, "minigame_$i:win");
-				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");		
+				$minigame->{ammo} = $self->value($section, "minigame_$i:ammo");
 				my $count = $self->value($section, "minigame_$i:targets");
 				for (my $j = 0; $j < $count; $j++) {
 					push @{$minigame->{targets}}, \split(/,/, $self->value($section, "minigame_$i:target_$j"));
 				}
 				$minigame->{distance} = $self->value($section, "minigame_$i:distance");
-				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");		
+				$minigame->{cur_target} = $self->value($section, "minigame_$i:cur_target");
 				$minigame->{points} = $self->value($section, "minigame_$i:points");
-				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");		
-				$minigame->{time} = $self->value($section, "minigame_$i:time");				
-				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");		
+				$minigame->{ammo_counter} = $self->value($section, "minigame_$i:ammo_counter");
+				$minigame->{time} = $self->value($section, "minigame_$i:time");
+				$minigame->{prev_time} = $self->value($section, "minigame_$i:prev_time");
 			}
 		}
 		push @{$container->{$p->{name}}}, $minigame;
@@ -1401,13 +1401,13 @@ sub line_count {
 	foreach (keys %{$self->{sections_hash}{$section}}) {
 		$count++;
 	}
-	return $count;	
+	return $count;
 }
 sub section_safe {
 	my $self = shift;
 	my ($section) = @_;
 	fail("$section is undefined") unless defined $self->{sections_hash}{$section};
-	return $self->{sections_hash}{$section};	
+	return $self->{sections_hash}{$section};
 }
 sub section {return $_[0]->{sections_hash}{$_[1]}};
 1;

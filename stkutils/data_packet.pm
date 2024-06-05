@@ -1,5 +1,5 @@
 # Module for packing and unpacking data
-# Update history: 
+# Update history:
 #	26/08/2012 - fix for new fail() syntax
 ######################################################
 package stkutils::data_packet;
@@ -30,7 +30,7 @@ use constant template_len => {
 	'l4' => 16,
 	'V2' => 8,
 	'V3' => 12,
-	'V4' => 16,	
+	'V4' => 16,
 	'a[12]'	=> 12,
 	'a[8]' => 8,
 	'a[169]' => 169,
@@ -45,11 +45,11 @@ use constant template_for_scalar => {
 	u16	=> 'v',
 	u32	=> 'V',
 	s8	=> 'C',
-	s16	=> 'v',	
+	s16	=> 'v',
 	s32	=> 'l',
 	q8	=> 'C',
-	q16	=> 'v',	
-	q16_old	=> 'v',	
+	q16	=> 'v',
+	q16_old	=> 'v',
 	sz	=> 'Z*',
 	f32	=> 'f',
 	guid	=> 'a[16]',
@@ -84,7 +84,7 @@ use constant template_for_vector => {
 	s32v3	=> 'l3',
 	s32v4	=> 'l4',
 	h32v3	=> 'V3',
-	h32v4	=> 'V4',	
+	h32v4	=> 'V4',
 	q8v3	=> 'C3',
 	q8v4	=> 'C4',
 	sdir	=> 'vf',
@@ -148,7 +148,7 @@ sub unpack_properties {
 	my $container = shift;
 	foreach my $p (@_) {
 #print "$p->{name} = ";
-	
+
 		my $template = template_for_scalar->{$p->{type}};
 		($p->{type} eq 'sz')			&& do {$self->_unpack_string($container, $p); next;};
 		defined $template				&& do {$self->_unpack_scalar($template, $container, $p); last if is_handled($container); next;};
@@ -174,7 +174,7 @@ sub unpack_properties {
 		($p->{type} eq 'minigames')		&& do {$self->_unpack_minigames($container, $p); next;};
 		#COP
 		($p->{type} eq 'times')			&& do {$self->_unpack_times($container, $p); next;};
-		$self->_unpack_vector($container, $p);  
+		$self->_unpack_vector($container, $p);
 		last if is_handled($container);
 	}
 }
@@ -260,7 +260,7 @@ sub _prepare_uv_adjustment {
 	}
 }
 sub _unpack_shape {
-	my ($self, $container, $p) = @_;	
+	my ($self, $container, $p) = @_;
 	my ($count) = $self->unpack('C', 1);
 	while ($count--) {
 		my %shape;
@@ -276,7 +276,7 @@ sub _unpack_shape {
 	}
 }
 sub _unpack_skeleton {
-	my ($self, $container, $p) = @_;	
+	my ($self, $container, $p) = @_;
 	@{$container->{bones_mask}} = $self->unpack('C8', 8);
 	($container->{root_bone}) = $self->unpack('v', 2);
 	@{$container->{bbox_min}} = $self->unpack('f3', 12);
@@ -331,9 +331,9 @@ sub _unpack_ordered_artefacts {
 		($obj->{unknown_number}) = $self->unpack('V', 4);
 		my ($inner_count) = $self->unpack('V', 4);
 		while ($inner_count--) {
-			my $afs = {}; 
+			my $afs = {};
 			($afs->{artefact_name}) = $self->unpack('Z*');
-			($afs->{number_1}, 
+			($afs->{number_1},
 			$afs->{number_2}) = $self->unpack('VV', 8);
 			push @{$obj->{af_sects}}, $afs;
 		}
@@ -471,7 +471,7 @@ sub _unpack_sim_squads {
 			($squad->{next_target},
 			$squad->{need_free_update},
 			$squad->{relationship},
-			$squad->{sympathy}) = $self->unpack('CCCC', 4);			
+			$squad->{sympathy}) = $self->unpack('CCCC', 4);
 			$self->set_save_marker($container, 'load', 1, 'sim_squad_scripted');
 		}
 		push @{$container->{$p->{name}}}, $squad;
@@ -483,30 +483,30 @@ sub _unpack_sim_squad_generic {
 	($squad->{smart_id},
 	$squad->{assigned_target_smart_id},
 	$squad->{sim_combat_id},
-	$squad->{delayed_attack_task}) = $self->unpack('vvvv', 8);			
-	@{$squad->{random_tasks}} = $self->unpack('C/(vv)');		
+	$squad->{delayed_attack_task}) = $self->unpack('vvvv', 8);
+	@{$squad->{random_tasks}} = $self->unpack('C/(vv)');
 	($squad->{npc_count},
 	$squad->{squad_power},
-	$squad->{commander_id}) = $self->unpack('Cfv', 7);		
-	@{$squad->{squad_npc}} = $self->unpack('C/v');	
-	($squad->{spoted_shouted}) = $self->unpack('C', 1);		
+	$squad->{commander_id}) = $self->unpack('Cfv', 7);
+	@{$squad->{squad_npc}} = $self->unpack('C/v');
+	($squad->{spoted_shouted}) = $self->unpack('C', 1);
 	$squad->{last_action_timer} = $self->unpack_ctime();
-	($squad->{squad_attack_power}) = $self->unpack('v', 2);	
-	my ($flag) = $self->unpack('C', 1);		
+	($squad->{squad_attack_power}) = $self->unpack('v', 2);
+	my ($flag) = $self->unpack('C', 1);
 	if ($flag == 1) {
-		($squad->{class}) = $self->unpack('C', 1);	
+		($squad->{class}) = $self->unpack('C', 1);
 		if ($squad->{class} == 1) {
 			#sim_attack_point
-			($squad->{dest_smrt_id}) = $self->unpack('v', 2);	
+			($squad->{dest_smrt_id}) = $self->unpack('v', 2);
 			$self->set_save_marker($container, 'load', 0, 'sim_attack_point');
 			($squad->{major},
-			$squad->{target_power_value}) = $self->unpack('Cv', 3);	
+			$squad->{target_power_value}) = $self->unpack('Cv', 3);
 			$self->set_save_marker($container, 'load', 1, 'sim_attack_point');
 		} else {
 			#sim_stay_point
 			$self->set_save_marker($container, 'load', 0, 'sim_stay_point');
 			($squad->{stay_defended},
-			$squad->{next_point_id}) = $self->unpack('Cv', 3);	
+			$squad->{next_point_id}) = $self->unpack('Cv', 3);
 			$squad->{begin_time} = $self->_unpack_complex_time();
 			$self->set_save_marker($container, 'load', 1, 'sim_stay_point');
 		}
@@ -514,7 +514,7 @@ sub _unpack_sim_squad_generic {
 	($squad->{items_spawned}) = $self->unpack('C', 1);
 	$squad->{bring_item_inited_time} = $self->unpack_ctime();
 	$squad->{recover_item_inited_time} = $self->unpack_ctime();
-	$self->set_save_marker($container, 'load', 1, 'sim_squad_generic');			
+	$self->set_save_marker($container, 'load', 1, 'sim_squad_generic');
 }
 sub _unpack_times {
 	my ($self, $container, $p) = @_;
@@ -810,7 +810,7 @@ sub _unpack_minigames {
 				$minigame->{scored},
 				$minigame->{ammo_counter},
 				$minigame->{time},
-				$minigame->{prev_time}) = $self->unpack('CZ*CCCCV');				
+				$minigame->{prev_time}) = $self->unpack('CZ*CCCCV');
 				$self->set_save_marker($container, 'load', 1, $minigame->{type});
 			} elsif ($minigame->{type} eq 'ten_targets') {
 				$self->set_save_marker($container, 'load', 0, $minigame->{type});
@@ -827,7 +827,7 @@ sub _unpack_minigames {
 				$minigame->{scored},
 				$minigame->{ammo_counter},
 				$minigame->{time},
-				$minigame->{prev_time}) = $self->unpack('CZ*CCCvV');				
+				$minigame->{prev_time}) = $self->unpack('CZ*CCCvV');
 				$self->set_save_marker($container, 'load', 1, $minigame->{type});
 			} elsif ($minigame->{type} eq 'two_seconds_standing') {
 				$self->set_save_marker($container, 'load', 0, $minigame->{type});
@@ -843,10 +843,10 @@ sub _unpack_minigames {
 				$minigame->{points},
 				$minigame->{ammo_counter},
 				$minigame->{time},
-				$minigame->{prev_time}) = $self->unpack('CZ*CCCV');				
+				$minigame->{prev_time}) = $self->unpack('CZ*CCCV');
 				$self->set_save_marker($container, 'load', 1, $minigame->{type});
 			}
-			$self->set_save_marker($container, 'load', 1, 'CMGShooting');	
+			$self->set_save_marker($container, 'load', 1, 'CMGShooting');
 		}
 		push @{$container->{$p->{name}}}, $minigame;
 	}
@@ -856,7 +856,7 @@ sub pack {
 	my $self = shift;
 	my $template = shift;
 fail("template is not defined") if !(defined $template);
-fail("data is not defined") if !(@_);
+fail("data is not defined") if !@_;
 fail("packet is not defined") unless defined $self;
 #	print "@_\n";
 	$self->{data} .= CORE::pack($template, @_);
@@ -900,7 +900,7 @@ sub _pack_scalar {
 	if ($p->{type} =~ /q(.*)/) {
 		my $func = "convert_u".$1;
 		$container->{$p->{name}} = sub_hash->{$func}($container->{$p->{name}}, -1, 1);
-	}	
+	}
 	$self->pack($template, $container->{$p->{name}});
 }
 sub _pack_u24 {
@@ -986,7 +986,7 @@ sub _pack_dir {
 	if ($z < 0) {
 		$t |= 0x2000;
 		$z = -$z;
-	}	
+	}
 	$i = ($x + $y + $z)/126;
 	$u = round($x / $i);
 	$v = round($y / $i);
@@ -999,7 +999,7 @@ sub _pack_dir {
 	$self->pack('v', $t);
 }
 sub _pack_shape {
-	my ($self, $container, $p) = @_;	
+	my ($self, $container, $p) = @_;
 	$self->pack('C', $#{$container->{$p->{name}}} + 1);
 	foreach my $shape (@{$container->{$p->{name}}}) {
 		$self->pack('C', $$shape{type});
@@ -1011,7 +1011,7 @@ sub _pack_shape {
 	}
 }
 sub _pack_skeleton {
-	my ($self, $container, $p) = @_;	
+	my ($self, $container, $p) = @_;
 	$self->pack('C8vf3f3v', @{$container->{bones_mask}}, $container->{root_bone}, @{$container->{bbox_min}}, @{$container->{bbox_max}}, $#{$container->{bones}} + 1);
 	foreach my $bone (@{$container->{bones}}) {
 		my $i = 0;
@@ -1044,7 +1044,7 @@ sub _pack_artefact_spawns {
 	} else {
 		foreach my $sect (@{$container->{$p->{name}}}) {
 			$self->pack('Z*V', $$sect{section_name}, $$sect{weight});
-		}	
+		}
 	}
 }
 sub _pack_ordered_artefacts {
@@ -1163,13 +1163,13 @@ sub _pack_sim_squad_generic {
 	$self->pack("C(vv)$n", $n, @{$squad->{random_tasks}});
 	$self->pack('Cfv', $squad->{npc_count}, $squad->{squad_power}, $squad->{commander_id});
 	$n = $#{$squad->{squad_npc}} + 1;
-	$self->pack("C(v)$n", $n, @{$squad->{squad_npc}});	
-	$self->pack('C', $squad->{spoted_shouted});	
+	$self->pack("C(v)$n", $n, @{$squad->{squad_npc}});
+	$self->pack('C', $squad->{spoted_shouted});
 	$self->_pack_ctime($squad->{last_action_timer});
-	$self->pack('v', $squad->{squad_attack_power});	
+	$self->pack('v', $squad->{squad_attack_power});
 	if (defined $squad->{class}) {
-		$self->pack('C', 1);	
-		$self->pack('C', $squad->{class});	
+		$self->pack('C', 1);
+		$self->pack('C', $squad->{class});
 		if ($squad->{class} == 1) {
 			#sim_attack_point
 			$self->pack('v', $squad->{dest_smrt_id});
@@ -1180,12 +1180,12 @@ sub _pack_sim_squad_generic {
 			$self->set_save_marker($container, 'save', 0, 'sim_stay_point');
 			$self->pack('Cv', $squad->{stay_defended}, $squad->{next_point_id});
 			$self->_pack_complex_time($squad->{begin_time});
-			$self->set_save_marker($container, 'save', 1, 'sim_stay_point');			
+			$self->set_save_marker($container, 'save', 1, 'sim_stay_point');
 		}
 	} else {
-		$self->pack('C', 0);	
+		$self->pack('C', 0);
 	}
-	$self->pack('C', $squad->{items_spawned});	
+	$self->pack('C', $squad->{items_spawned});
 	$self->_pack_ctime($squad->{bring_item_inited_time});
 	$self->_pack_ctime($squad->{recover_item_inited_time});
 	$self->set_save_marker($container, 'save', 1, 'sim_squad_generic');
@@ -1409,7 +1409,7 @@ sub _pack_minigames {
 				$self->pack('CZ*CCCV', $_->{distance}, $_->{cur_target}, $_->{points}, $_->{ammo_counter}, $_->{time}, $_->{prev_time});
 				$self->set_save_marker($container, 'save', 1, $_->{type});
 			}
-			$self->set_save_marker($container, 'save', 1, 'CMGShooting');	
+			$self->set_save_marker($container, 'save', 1, 'CMGShooting');
 		}
 	}
 }
@@ -1506,7 +1506,7 @@ sub convert_u16_old {
 sub error_handler {
 	my $self = shift;
 	my ($container, $template) = @_;
-	print "handling error with $container->{section_name}, template $template\n";
+	print "handling error with $container->{section_name}\n";
 	SWITCH: {
 		# Nar Sol fix
 		($template eq 'C') && (ref($container) eq 'se_zone_anom') && $container->{version} == 118 && $container->{script_version} == 6 && do {
@@ -1540,11 +1540,11 @@ sub error_handler {
 			}
 			fix_25xx($self, $container);
 			last;
-		};		
+		};
 		(ref($container) =~ /stalker|monster|actor/) && $container->{version} == 118 && $container->{script_version} == 5 && do {
 			fix_25xx($self, $container);
 			last;
-		};		
+		};
 		fail("unhandled exception\n");
 	}
 }

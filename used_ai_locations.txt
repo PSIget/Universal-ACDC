@@ -1,0 +1,17 @@
+всегда спавнятся по координатам
+CSE_ALifePHSkeletonObject
+CSE_ALifeSpaceRestrictor
+CSE_ALifeObjectPhysic
+CSE_ALifeObjectHangingLamp
+CSE_ALifeObjectProjector
+CSE_ALifeHelicopter
+CSE_ALifeCar
+CSE_ALifeObjectBreakable
+CSE_ALifeObjectClimable
+CSE_ALifeItemBolt
+CSE_ALifeCreatureCrow
+CSE_ALifeCreaturePhantom
+
+всегда спавнятся по нодам
+CSE_ALifeSmartZone
+CSE_ALifeCreatureAbstract

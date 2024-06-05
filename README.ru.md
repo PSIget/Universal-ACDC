@@ -1,4 +1,4 @@
-# S.T.A.L.K.E.R. *.spawn Compiler/Decompiler
+# S.T.A.L.K.E.R. Spawn Compiler/Decompiler
 
 Этот инструмент предназначен для распаковки и запаковки файлов all.spawn/level.spawn любых билдов, начиная с 1265.
 

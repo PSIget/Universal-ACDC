@@ -1,4 +1,4 @@
-# S.T.A.L.K.E.R. *.spawn Compiler/Decompiler
+# S.T.A.L.K.E.R. Spawn Compiler/Decompiler
 
 This tool is designed for unpacking and packing all.spawn/level.spawn files from any builds starting from 1265.
 

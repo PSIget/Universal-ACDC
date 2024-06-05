@@ -1,4 +1,4 @@
-всегда спавнятся по координатам
+РІСЃРµРіРґР° СЃРїР°РІРЅСЏС‚СЃСЏ РїРѕ РєРѕРѕСЂРґРёРЅР°С‚Р°Рј
 CSE_ALifePHSkeletonObject
 CSE_ALifeSpaceRestrictor
 CSE_ALifeObjectPhysic
@@ -12,6 +12,6 @@ CSE_ALifeItemBolt
 CSE_ALifeCreatureCrow
 CSE_ALifeCreaturePhantom
 
-всегда спавнятся по нодам
+РІСЃРµРіРґР° СЃРїР°РІРЅСЏС‚СЃСЏ РїРѕ РЅРѕРґР°Рј
 CSE_ALifeSmartZone
 CSE_ALifeCreatureAbstract

@@ -44,60 +44,60 @@
 # 	[i] fixed Clear Sky spawn unpacking caused by new actor packet processing
 # 	[i] some tiny staff, can't remember it all
 # 1.28:
-# 	[i] èñïðàâëåíî èãíîðèðîâàíèå ïàðñåðîì êëþ÷à -way â ðåæèìå split.
-# 	[i] èñïðàâëåíà îøèáêà ñêàíèðîâàíèÿ êîíôèãîâ ïðè êîìïèëÿöèè.
-# 	[i] èñïðàâëåíà îøèáêà ÷òåíèÿ ñåêöèé íåêîòîðûõ se-êëàññîâ.
-# 	[i] èñïðàâëåíà îøèáêà ðàçáèâêè ñïàâíà, èç-çà êîòîðîé ãåíåðèðîâàëèñü ëåâåë ñïàâíû íåïðàâèëüíîãî ôîðìàòà.
-# 	[+] äîáàâëåí êîíòðîëü äóïëèêàòîâ àêòîðà ïðè êîìïèëÿöèè.
-# 
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾ Ð¸Ð³Ð½Ð¾Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð°Ñ€ÑÐµÑ€Ð¾Ð¼ ÐºÐ»ÑŽÑ‡Ð° -way Ð² Ñ€ÐµÐ¶Ð¸Ð¼Ðµ split.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ° ÑÐºÐ°Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ ÐºÐ¾Ð½Ñ„Ð¸Ð³Ð¾Ð² Ð¿Ñ€Ð¸ ÐºÐ¾Ð¼Ð¿Ð¸Ð»ÑÑ†Ð¸Ð¸.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ° Ñ‡Ñ‚ÐµÐ½Ð¸Ñ ÑÐµÐºÑ†Ð¸Ð¹ Ð½ÐµÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… se-ÐºÐ»Ð°ÑÑÐ¾Ð².
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ° Ñ€Ð°Ð·Ð±Ð¸Ð²ÐºÐ¸ ÑÐ¿Ð°Ð²Ð½Ð°, Ð¸Ð·-Ð·Ð° ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð³ÐµÐ½ÐµÑ€Ð¸Ñ€Ð¾Ð²Ð°Ð»Ð¸ÑÑŒ Ð»ÐµÐ²ÐµÐ» ÑÐ¿Ð°Ð²Ð½Ñ‹ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð°.
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ Ð´ÑƒÐ¿Ð»Ð¸ÐºÐ°Ñ‚Ð¾Ð² Ð°ÐºÑ‚Ð¾Ñ€Ð° Ð¿Ñ€Ð¸ ÐºÐ¾Ð¼Ð¿Ð¸Ð»ÑÑ†Ð¸Ð¸.
+#
 # 1.27:
-# 	[i] èñïðàâëåíà îøèáêà ïàðñåðà, â íåêîòîðûõ ñëó÷àÿõ ïðèâîäèâøàÿ ê ïîð÷å ëîãèêè.
-# 	[i] èñïðàâëåíî ñîçäàíèå ïàïîê ïðè ñîõðàíåíèè ðåçóëüòàòà.
-# 	[+] äîáàâëåíà ïåðåèíèöèàëèçàöèÿ ïàðàìåòðîâ ñåêöèè ïîñëå ñìåíû êëàññà ïðè êîíâåðòàöèè. Ýòî ðàñøèðÿåò äèàïàçîí âåðñèé, äîñòóïíûõ äëÿ êîíâåðòèðîâàíèÿ.
-# 	[+] äîáàâëåíà ïîääåðæêà ìàñê ïðè êîíâåðòàöèè.
-# 	[+] äîáàâëåí êëþ÷ -ini â ðåæèìå êîíâåðòàöèè
-# 
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¿Ð°Ñ€ÑÐµÑ€Ð°, Ð² Ð½ÐµÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… ÑÐ»ÑƒÑ‡Ð°ÑÑ… Ð¿Ñ€Ð¸Ð²Ð¾Ð´Ð¸Ð²ÑˆÐ°Ñ Ðº Ð¿Ð¾Ñ€Ñ‡Ðµ Ð»Ð¾Ð³Ð¸ÐºÐ¸.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ð¿Ð°Ð¿Ð¾Ðº Ð¿Ñ€Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ð¸ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð°.
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð° Ð¿ÐµÑ€ÐµÐ¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² ÑÐµÐºÑ†Ð¸Ð¸ Ð¿Ð¾ÑÐ»Ðµ ÑÐ¼ÐµÐ½Ñ‹ ÐºÐ»Ð°ÑÑÐ° Ð¿Ñ€Ð¸ ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð°Ñ†Ð¸Ð¸. Ð­Ñ‚Ð¾ Ñ€Ð°ÑÑˆÐ¸Ñ€ÑÐµÑ‚ Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½ Ð²ÐµÑ€ÑÐ¸Ð¹, Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹Ñ… Ð´Ð»Ñ ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ.
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð° Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶ÐºÐ° Ð¼Ð°ÑÐº Ð¿Ñ€Ð¸ ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð°Ñ†Ð¸Ð¸.
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐºÐ»ÑŽÑ‡ -ini Ð² Ñ€ÐµÐ¶Ð¸Ð¼Ðµ ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð°Ñ†Ð¸Ð¸
+#
 # 1.26:
-# 	[i] ïîïðàâëåíà ðàñïàêîâêà ñïàâíîâ ×Í.
-# 	[+] äîáàâëåíî àâòîìàòè÷åñêîå çàïîëíåíèå âåðñèè ñïàâíà èç ïåðâîé ñåêöèè (åñëè àêòîðà â ñïàâíå íåò).
-# 	[+] ÷òî-òî åùå ïî ìåëî÷è, íå ïîìíþ.
-# 
+# 	[i] Ð¿Ð¾Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÐºÐ° ÑÐ¿Ð°Ð²Ð½Ð¾Ð² Ð§Ð.
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¾ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð²ÐµÑ€ÑÐ¸Ð¸ ÑÐ¿Ð°Ð²Ð½Ð° Ð¸Ð· Ð¿ÐµÑ€Ð²Ð¾Ð¹ ÑÐµÐºÑ†Ð¸Ð¸ (ÐµÑÐ»Ð¸ Ð°ÐºÑ‚Ð¾Ñ€Ð° Ð² ÑÐ¿Ð°Ð²Ð½Ðµ Ð½ÐµÑ‚).
+# 	[+] Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ ÐµÑ‰Ðµ Ð¿Ð¾ Ð¼ÐµÐ»Ð¾Ñ‡Ð¸, Ð½Ðµ Ð¿Ð¾Ð¼Ð½ÑŽ.
+#
 # 1.25:
-# 	[i] îòêëþ÷åí âûâîä ïóñòîãî ïàðàìåòðà spawned_obj ïðè ðàñïàêîâêå.
-# 	[+] ðåàëèçîâàíî àâòîìàòè÷åñêîå çàïîëíåíèå ïàðàìåòðîâ version è script_version ïðè çàïàêîâêå ñïàâíîâ ñ ñåêöèÿìè èç ðàçíûõ âåðñèé èãðû. Âåðñèÿ áåðåòñÿ èç êîíôèãà àêòîðà.
-# 
+# 	[i] Ð¾Ñ‚ÐºÐ»ÑŽÑ‡ÐµÐ½ Ð²Ñ‹Ð²Ð¾Ð´ Ð¿ÑƒÑÑ‚Ð¾Ð³Ð¾ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð° spawned_obj Ð¿Ñ€Ð¸ Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÐºÐµ.
+# 	[+] Ñ€ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð¾ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² version Ð¸ script_version Ð¿Ñ€Ð¸ Ð·Ð°Ð¿Ð°ÐºÐ¾Ð²ÐºÐµ ÑÐ¿Ð°Ð²Ð½Ð¾Ð² Ñ ÑÐµÐºÑ†Ð¸ÑÐ¼Ð¸ Ð¸Ð· Ñ€Ð°Ð·Ð½Ñ‹Ñ… Ð²ÐµÑ€ÑÐ¸Ð¹ Ð¸Ð³Ñ€Ñ‹. Ð’ÐµÑ€ÑÐ¸Ñ Ð±ÐµÑ€ÐµÑ‚ÑÑ Ð¸Ð· ÐºÐ¾Ð½Ñ„Ð¸Ð³Ð° Ð°ÐºÑ‚Ð¾Ñ€Ð°.
+#
 # 1.24:
-# 	[i] èñïðàâëåíà ðàñïàêîâêà/çàïàêîâêà ñïàâíà áèëäà 2571.
-# 	[i] èñïðàâëåíà çàïèñü guids.ltx
-# 	[i] ìåëêèå ïðàâêè
-# 
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÐºÐ°/Ð·Ð°Ð¿Ð°ÐºÐ¾Ð²ÐºÐ° ÑÐ¿Ð°Ð²Ð½Ð° Ð±Ð¸Ð»Ð´Ð° 2571.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð° Ð·Ð°Ð¿Ð¸ÑÑŒ guids.ltx
+# 	[i] Ð¼ÐµÐ»ÐºÐ¸Ðµ Ð¿Ñ€Ð°Ð²ÐºÐ¸
+#
 # 1.23b:
-# 	[+] óáðàíî ïðåäóïðåæäåíèå "state data left" ïðè ðàñïàêîâêå ñïàâíîâ ÇÏ, çàïàêîâàííûõ ðàíåå ñ ïîìîùüþ acdccop.
-# 	[i] èñïðàâëåíû îøèáêè split, èç-çà êîòîðûõ ìîãëè ïîëó÷àòüñÿ êðèâûå level.spawn
-# 	[i] ïåðåäåëàíà ëîãèêà ÷òåíèÿ/çàïèñè ïàêåòîâ se_stalker/se_monster
-# 	[i] ìåëêèå èçìåíåíèÿ
-# 
+# 	[+] ÑƒÐ±Ñ€Ð°Ð½Ð¾ Ð¿Ñ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ "state data left" Ð¿Ñ€Ð¸ Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÐºÐµ ÑÐ¿Ð°Ð²Ð½Ð¾Ð² Ð—ÐŸ, Ð·Ð°Ð¿Ð°ÐºÐ¾Ð²Ð°Ð½Ð½Ñ‹Ñ… Ñ€Ð°Ð½ÐµÐµ Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ acdccop.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ñ‹ Ð¾ÑˆÐ¸Ð±ÐºÐ¸ split, Ð¸Ð·-Ð·Ð° ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ð¼Ð¾Ð³Ð»Ð¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°Ñ‚ÑŒÑÑ ÐºÑ€Ð¸Ð²Ñ‹Ðµ level.spawn
+# 	[i] Ð¿ÐµÑ€ÐµÐ´ÐµÐ»Ð°Ð½Ð° Ð»Ð¾Ð³Ð¸ÐºÐ° Ñ‡Ñ‚ÐµÐ½Ð¸Ñ/Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð¿Ð°ÐºÐµÑ‚Ð¾Ð² se_stalker/se_monster
+# 	[i] Ð¼ÐµÐ»ÐºÐ¸Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ
+#
 # 1.22b:
-# 	[+] äîáàâëåí êëþ÷ -nofatal
-# 
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐºÐ»ÑŽÑ‡ -nofatal
+#
 # 1.21b:
-# 	[i] èñïðàâëåíû íåáîëüøèå îïå÷àòêè â êîäå.
-# 	[i] ïàðñåð òåïåðü êîððåêòíî ÷èòàåò çíà÷åíèÿ ñ êîììåíòàðèÿìè.
-# 
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ñ‹ Ð½ÐµÐ±Ð¾Ð»ÑŒÑˆÐ¸Ðµ Ð¾Ð¿ÐµÑ‡Ð°Ñ‚ÐºÐ¸ Ð² ÐºÐ¾Ð´Ðµ.
+# 	[i] Ð¿Ð°Ñ€ÑÐµÑ€ Ñ‚ÐµÐ¿ÐµÑ€ÑŒ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾ Ñ‡Ð¸Ñ‚Ð°ÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ñ ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸ÑÐ¼Ð¸.
+#
 # 1.2b:
-# 	[+] íåáîëüøèå ïðàâêè ïî êîíâåðòàöèè.	
-# 	[+] äîáàâëåííûå â ìîäàõ ñîîòâåòñòâèÿ clsid -> ñåðâåðíûé êëàññ òåïåðü ðåäàêòèðóþòñÿ â îòäåëüíîì êîíôèãå (clsids.ini).
-# 	[+] îøèáêà ïðè âñòðå÷å íåçíàêîìîãî clsid òåïåðü âûäàåòñÿ ïðè ðàñïàêîâêè ñåêöèè ñïàâíà ñ òàêèì clsid, à íå ïðè ñêàíèðîâàíèè êîíôèãîâ, êàê ðàíüøå.
-# 
+# 	[+] Ð½ÐµÐ±Ð¾Ð»ÑŒÑˆÐ¸Ðµ Ð¿Ñ€Ð°Ð²ÐºÐ¸ Ð¿Ð¾ ÐºÐ¾Ð½Ð²ÐµÑ€Ñ‚Ð°Ñ†Ð¸Ð¸.
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð½Ñ‹Ðµ Ð² Ð¼Ð¾Ð´Ð°Ñ… ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ñ clsid -> ÑÐµÑ€Ð²ÐµÑ€Ð½Ñ‹Ð¹ ÐºÐ»Ð°ÑÑ Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€ÑƒÑŽÑ‚ÑÑ Ð² Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾Ð¼ ÐºÐ¾Ð½Ñ„Ð¸Ð³Ðµ (clsids.ini).
+# 	[+] Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð²ÑÑ‚Ñ€ÐµÑ‡Ðµ Ð½ÐµÐ·Ð½Ð°ÐºÐ¾Ð¼Ð¾Ð³Ð¾ clsid Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ð²Ñ‹Ð´Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÐºÐ¸ ÑÐµÐºÑ†Ð¸Ð¸ ÑÐ¿Ð°Ð²Ð½Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ clsid, Ð° Ð½Ðµ Ð¿Ñ€Ð¸ ÑÐºÐ°Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ð¸ ÐºÐ¾Ð½Ñ„Ð¸Ð³Ð¾Ð², ÐºÐ°Ðº Ñ€Ð°Ð½ÑŒÑˆÐµ.
+#
 # 1.1b:
-# 	[+] ïðîâåðåíà ðàñïàêîâêà áèëä-ñïàâíîâ, ðåøåíà ïðîáëåìà äåêîìïèëÿöèè ñïàâíîâ  áèëäîâ 25õõ.
-# 	[+] äîáàâëåí êîíòðîëü íàëè÷èÿ ïàðàìåòðà version â ñåêöèÿõ ðàñïàêîâàííîãî ñïàâíà.
-# 	[i] èñïðàâëåíî èñêëþ÷åíèå ôàéëà ñî spawn_id îáúåêòîâ ïðè ñêàíèðîâàíèè êîíôèãîâ.
-# 
+# 	[+] Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐµÐ½Ð° Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÐºÐ° Ð±Ð¸Ð»Ð´-ÑÐ¿Ð°Ð²Ð½Ð¾Ð², Ñ€ÐµÑˆÐµÐ½Ð° Ð¿Ñ€Ð¾Ð±Ð»ÐµÐ¼Ð° Ð´ÐµÐºÐ¾Ð¼Ð¿Ð¸Ð»ÑÑ†Ð¸Ð¸ ÑÐ¿Ð°Ð²Ð½Ð¾Ð²  Ð±Ð¸Ð»Ð´Ð¾Ð² 25Ñ…Ñ….
+# 	[+] Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð° version Ð² ÑÐµÐºÑ†Ð¸ÑÑ… Ñ€Ð°ÑÐ¿Ð°ÐºÐ¾Ð²Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð°Ð²Ð½Ð°.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾ Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð°Ð¹Ð»Ð° ÑÐ¾ spawn_id Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð² Ð¿Ñ€Ð¸ ÑÐºÐ°Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ð¸ ÐºÐ¾Ð½Ñ„Ð¸Ð³Ð¾Ð².
+#
 # 1.0b:
-# 	[+] îñíîâàòåëüíî ïåðåðàáîòàí êîä, ÷àñòü ñêðèïòà âûíåñåíà â îòäåëüíûå ìîäóëè.
-# 	[i] èñïðàâëåíû âñå íåðàáîòàâøèå ôóíêöèè.
-# 	[+] óâåëè÷åíà ñêîðîñòü âûïîëíåíèÿ êîäà, óìåíüøåíû òðåáîâàíèÿ ïî ïàìÿòè.
+# 	[+] Ð¾ÑÐ½Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð¿ÐµÑ€ÐµÑ€Ð°Ð±Ð¾Ñ‚Ð°Ð½ ÐºÐ¾Ð´, Ñ‡Ð°ÑÑ‚ÑŒ ÑÐºÑ€Ð¸Ð¿Ñ‚Ð° Ð²Ñ‹Ð½ÐµÑÐµÐ½Ð° Ð² Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð¼Ð¾Ð´ÑƒÐ»Ð¸.
+# 	[i] Ð¸ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ñ‹ Ð²ÑÐµ Ð½ÐµÑ€Ð°Ð±Ð¾Ñ‚Ð°Ð²ÑˆÐ¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸.
+# 	[+] ÑƒÐ²ÐµÐ»Ð¸Ñ‡ÐµÐ½Ð° ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ ÐºÐ¾Ð´Ð°, ÑƒÐ¼ÐµÐ½ÑŒÑˆÐµÐ½Ñ‹ Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð½Ð¸Ñ Ð¿Ð¾ Ð¿Ð°Ð¼ÑÑ‚Ð¸.
 ###########################################################
 package gg_version;
 use strict;
@@ -160,7 +160,7 @@ sub graph_ver_by_ver {
 			return $info->{graph_ver};
 		}
 	}
-	return undef;	
+	return undef;
 }
 sub scr_ver_by_version {	#returns script_version by version
 	foreach my $info (build_versions) {
@@ -317,7 +317,7 @@ sub read {
 			if ($self->get_version() > 16) {
 				($count, $size) = $cf->r_chunk_open();
 				$self->read_af_spawn($cf);
-				$cf->r_chunk_close();	
+				$cf->r_chunk_close();
 			}
 		}
 	} else {
@@ -340,7 +340,7 @@ sub read_header {
 		(	$self->{graph_version},
 			$self->{count},
 			$self->{unknown},
-		) = unpack('VVV', ${$cf->r_chunk_data()});	
+		) = unpack('VVV', ${$cf->r_chunk_data()});
 	}
 }
 sub read_alife {
@@ -410,7 +410,7 @@ sub read_af_spawn {
 			@{$afsp->{position}} = $packet->unpack('f3', 12);
 			($afsp->{level_vertex_id}, $afsp->{distance}) = $packet->unpack('Vf', 8);
 			push @{$self->{af_spawn_places}}, $afsp;
-		}		
+		}
 	}
 }
 sub read_way {
@@ -488,9 +488,9 @@ sub write_header {
 			$#{$self->{alife_objects}} + 1,
 			$self->{unknown},);
 		if ($self->get_version() > 79) {
-			$cf->w_chunk(0, $data);	
+			$cf->w_chunk(0, $data);
 		} else {
-			$cf->w_chunk(0xFFFF, $data);	
+			$cf->w_chunk(0xFFFF, $data);
 		}
 	}
 }
@@ -539,7 +539,7 @@ sub write_alife {
 			$cf->w_chunk_open($id);
 			$object->write($cf, $id++);
 			$cf->w_chunk_close();
-		}	
+		}
 	}
 }
 sub write_af_spawn {
@@ -627,7 +627,7 @@ sub write_graph {
 			$ct->set_version($self->check_graph_version());
 			$ct->write();
 			$self->{graph}->{raw_cross_tables}{$level} = $ct->get_data();
-		}		
+		}
 		$self->{graph}->{gg_version} = 'cop';
 		my $graph_data = $self->{graph}->compose();
 		# write graph
@@ -712,7 +712,7 @@ sub import_alife {
 				$object->{cse_object}->{custom_data} = $1."[spawn_id]\n$object->{cse_object}->{name} = $id";
 				print $idx_log "\n[$object->{cse_object}->{name}]\nnew_idx = $id\n" if !defined $self->idx();
 			}
-			
+
 			push @{$self->{alife_objects}}, $object;
 			$id++;
 		}
@@ -725,7 +725,7 @@ sub import_alife {
 		my $data = '';
 		$bin_fh->read($data, ($bin_fh->stat())[7]);
 		$self->{unk_chunk} = \$data;
-		$bin_fh->close();	
+		$bin_fh->close();
 	}
 	$idx_log->close() if !defined $self->idx();
 }
@@ -755,7 +755,7 @@ sub import_af_spawn {
 			$afsp->{distance} = $fh->value($id, 'distance');
 			push @{$self->{af_spawn_places}}, $afsp;
 		}
-		$fh->close();		
+		$fh->close();
 	} else {
 		return if !defined $if->value('section2', 'binary_files');
 		my $fn = $if->value('section2', 'binary_files');
@@ -817,7 +817,7 @@ sub export {
 		$if->close();
 	} else {
 		$self->export_level('level_spawn.ltx');
-	}		
+	}
 }
 sub export_header {
 	my $self = shift;
@@ -840,8 +840,8 @@ sub export_alife {
 	my $id = 0;
 	my %if_by_level;
 	my @levels;
-	
-	
+
+
 	my %objects_by_level_id;	# key = level_id, value = array_ref
 	# split objects by level id
 	foreach my $object (@{$self->{alife_objects}}) {
@@ -860,7 +860,7 @@ sub export_alife {
 			foreach my $arr (values %objects_by_level_id) {
 				my @new = sort {($a->{cse_object}->{section_name} cmp $b->{cse_object}->{section_name}) || ($a->{cse_object}->{name} cmp $b->{cse_object}->{name})} @$arr;
 				$arr = \@new;
-			}	
+			}
 		}
 	}
 	# export objects
@@ -886,7 +886,7 @@ sub export_alife {
 			print $out_sects "$object->{cse_object}->{name}\n";
 		}
 		$out_sects->close();
-	}	
+	}
 	if ($self->get_version() == 85) {
 		my $bin_fh = IO::File->new('unk_chunk.bin', 'w') or fail("unk_chunk.bin: $!\n");
 		binmode $bin_fh;
@@ -948,7 +948,7 @@ use constant way_name_exceptions => {
 sub export_way {
 	my $self = shift;
 	my ($if) = @_;
-	
+
 	# init prefixes
 	my $prefixes = $self->init_way_prefixes();
 	if (@{$self->{way_objects}}) {
@@ -999,7 +999,7 @@ sub get_level_name {
 	my $self = shift;
 	my $object = shift;
 	my $prefixes = shift;
-	
+
 	my $default_level = '_level_unknown';
 	my $level = $self->{graph}->level_name($object->{points}[0]->{game_vertex_id});
 	if ($level eq '_level_unknown') {
@@ -1061,7 +1061,7 @@ sub prepare_graph_points {
 	foreach my $level (values %{$graph->{level_by_guid}}) {
 		my $level_spawn = all_spawn->new();
 		$level_spawn->{level_name} = $level;
-		$level_spawn->{config}->{common}->{src} = ''; 
+		$level_spawn->{config}->{common}->{src} = '';
 		$level_spawn->{config}->{common}->{out} = $level.'/level.spawn';
 		$level_spawn->set_flag(FL_LEVEL_SPAWN);
 		my $id = 0;
@@ -1124,7 +1124,7 @@ sub read_level_spawns {
 		$level_spawn->{config}->{common}->{src} = $level_spawn->{config}->{common}->{out} = $level.'/level.spawn';
 		$level_spawn->set_flag(FL_LEVEL_SPAWN);
 		$level_spawn->{config}->{mode} = 'split';
-		$level_spawn->read();	
+		$level_spawn->read();
 		$self->split_spawns($level_spawn);
 		push @{$self->{level_spawns}}, $level_spawn;
 	}
@@ -1148,7 +1148,7 @@ sub split_spawns {
 sub write_splitted_spawns {
 	my $self = shift;
 	print "writing level spawns...\n";
-	
+
 	foreach my $level_spawn (@{$self->{level_spawns}}) {
 		my $level = $level_spawn->{level_name};
 		rename $level.'/level.spawn', $level.'/level.spawn.bak' or (unlink $level.'/level.spawn.bak' and rename $level.'/level.spawn', $level.'/level.spawn.bak');
@@ -1178,7 +1178,7 @@ sub split_ways {
 		}
 		push @{$info->{way_objects}}, \$object;
 	}
-	
+
 	foreach my $info (values %info_by_level) {
 		my $id = 0;
 		$info->{lif}->w_chunk_open(4096);
@@ -1190,7 +1190,7 @@ sub split_ways {
 		$info->{lif}->w_chunk_close();
 		$info->{lif}->close();
 	}
-	
+
 }
 # convert
 sub prepare_objects {
@@ -1270,7 +1270,7 @@ sub print_harm_objects {
 	foreach my $object (@{$self->{harm_objects}}) {
 		$object->export_ltx($lif, $id++);
 	}
-	$lif->close();	
+	$lif->close();
 }
 sub print_excluded_objects {
 	my $self = shift;
@@ -1280,7 +1280,7 @@ sub print_excluded_objects {
 	foreach my $object (@{$self->{excluded_objects}}) {
 		$object->export_ltx($lif, $id++);
 	}
-	$lif->close();	
+	$lif->close();
 }
 # parse
 sub parse_way {
@@ -1346,7 +1346,7 @@ sub read_service_chunk {
 sub write_service_chunk {
 	my $self = shift;
 	my ($cf) = @_;
-	
+
 	if ($self->idx()){
 		print "writing service information...\n";
 		my $idx_name;
@@ -1392,12 +1392,12 @@ GetOptions(
 	'compile:s' => \&process_glob_opt,
 	'split:s' => \&process_glob_opt,
 	'convert=s' => \&process_glob_opt,
-	'parse=s' => \&process_glob_opt,	
+	'parse=s' => \&process_glob_opt,
 	'compare=s' => \&process_glob_opt,
 	'update=s' => \&process_glob_opt,
 	# common options
 	'out=s' => \&process_common_opts,
-	'af' => \&process_common_opts,			# only for -d è -c
+	'af' => \&process_common_opts,			# only for -d Ð¸ -c
 	'way' => \&process_common_opts,			# for -split and -parse
 	'scan_dir=s' => \&process_common_opts,
 	'graph_dir:s' => \&process_common_opts,	# useless with -parse and -c and while reading cs/cop spawn
@@ -1407,7 +1407,7 @@ GetOptions(
 	'log:s' => \&process_common_opts,
 	# compile options
 	'f=s' => \$config->{compile}->{flags},
-	'idx:s' => \$config->{compile}->{idx_file},	
+	'idx:s' => \$config->{compile}->{idx_file},
 	# split options
 	'use_graph' => \$config->{split}->{use_graph},
 	# convert options
@@ -1499,9 +1499,9 @@ sub decompile {
 	print "opening $common->{src}...\n";
 	unlink 'guids.ltx';
 	$spawn->read();
-	read_graph() if (!defined $spawn->{graph_data} && !defined $common->{level_spawn}); 
+	read_graph() if (!defined $spawn->{graph_data} && !defined $common->{level_spawn});
 	create_outdir($common->{out});
-	print "exporting alife objects...\n";	
+	print "exporting alife objects...\n";
 	$spawn->export('all.ltx');
 }
 sub compile {
@@ -1512,7 +1512,7 @@ sub compile {
 			$config->{compile}->{flags_hash}{$1} = 1;
 		}
 	}
-#	read_graph() if (!defined $spawn->{graph_data} && !defined $common->{level_spawn}); 
+#	read_graph() if (!defined $spawn->{graph_data} && !defined $common->{level_spawn});
 	if ($common->{src} ne '') {
 		chdir $common->{src} or fail('cannot change dir to '.$common->{src});
 	}
@@ -1532,11 +1532,11 @@ sub convert {
 #		check_spawn_version();
 		print "opening $common->{src}...\n";
 		unlink 'guids.ltx';
-		$spawn->read();	
-		read_graph() if !defined $spawn->{graph_data}; 
+		$spawn->read();
+		read_graph() if !defined $spawn->{graph_data};
 		$common->{out} = $common->{src}.'.converted';
 		process_converting();
-		$spawn->write();	
+		$spawn->write();
 	} elsif (substr($common->{src}, -3) eq 'ltx') {
 		$common->{out} = 'converted' unless defined $common->{out};
 		print "importing alife objects...\n";
@@ -1544,10 +1544,10 @@ sub convert {
 #		fix_versions();
 		process_converting();
 		print "exporting alife objects...\n";
-		$spawn->export_level($spawn->get_out());		
+		$spawn->export_level($spawn->get_out());
 	} else {
 		fail('Trouble with spawn converting: cant recognize type of file - text or binary');
-	}	
+	}
 }
 sub splitting {
 	# check existance of proper keys
@@ -1556,7 +1556,7 @@ sub splitting {
 	print "opening $common->{src}...\n";
 	unlink 'guids.ltx';
 	$spawn->read();
-	read_graph() if !defined $spawn->{graph_data}; 
+	read_graph() if !defined $spawn->{graph_data};
 	if ($spawn->use_graph()) {
 		create_outdir($common->{out});
 		$spawn->{graph}->read_edges();
@@ -1577,14 +1577,14 @@ sub parse {
 	$spawn->import_level($spawn->get_src());
 	$common->{out} = 'parsed_spawn' unless defined $common->{out};
 	create_outdir($common->{out});
-#	fix_versions();	
+#	fix_versions();
 	foreach my $object (@{$spawn->{alife_objects}}) {
 		$object->{cse_object}->{game_vertex_id} += ($spawn->get_new_gvid() - $spawn->get_old_gvid());
-	}	
+	}
 	print "exporting $common->{out}...\n";
 	my @out = split /\//, $spawn->get_src();
 	$spawn->export_level($out[$#out]);
-	$spawn->parse_way($out[$#out]) if $spawn->way() == 1;	
+	$spawn->parse_way($out[$#out]) if $spawn->way() == 1;
 }
 sub compare {
 	# check existance of proper keys
@@ -1629,7 +1629,7 @@ sub update {
 	print "opening $common->{src}...\n";
 	unlink 'guids.ltx';
 	$spawn->read();
-	read_graph() if (!defined $spawn->{graph_data} && !defined $common->{level_spawn}); 
+	read_graph() if (!defined $spawn->{graph_data} && !defined $common->{level_spawn});
 	my $out = IO::File->new('all_spawn.ltx', 'w');
 	print "exporting alife objects...\n";
 	print $out "[objects]\n";
@@ -1678,7 +1678,7 @@ sub update {
 	print "calling vertex.exe...\n";
 	my $res = `vertex all_spawn.ltx`;
 	print "control was returned\n";
-	
+
 	my $ini = stkutils::ini_file->new('all_spawn.ltx.processed', 'r');
 	fail("can't open all_spawn.ltx.processed") if !defined $ini;
 	print "updating alife objects...\n";
@@ -1711,7 +1711,7 @@ sub update {
 	}
 	$ini->close();
 	$common->{out} = $common->{src}.'.processed' unless defined $common->{out};
-	$spawn->write(1);	
+	$spawn->write(1);
 #	unlink 'all_spawn.ltx';
 #	unlink 'all_spawn.ltx.processed';
 }
@@ -1736,7 +1736,7 @@ sub is_alredy_scanned {
 	return 0;
 }
 sub check_spawn_version {
-	print "checking version of $common->{src}...\n";	
+	print "checking version of $common->{src}...\n";
 	my $fh = IO::File->new($common->{src}, 'r') or fail("$common->{src}: $!\n");
 	binmode $fh;
 	my $data;
@@ -1785,8 +1785,8 @@ sub check_spawn_version {
 				$table->{garb_2},
 				$table->{version},
 				$table->{script_version},
-			) = unpack('a[32]Z*Z*a[36]vv', $data);	
-		}	
+			) = unpack('a[32]Z*Z*a[36]vv', $data);
+		}
 	}
 	$table->{script_version} = $table->{backup} if $table->{script_version} == 0xffff;
 	$table->{script_version} = 0 if $table->{version} <= 0x45;
@@ -1836,18 +1836,18 @@ sub process_converting {
 		# handle SCRPTZN
 		if ($object->{cse_object}->{version} > 124){
 			bless $object->{cse_object}, 'se_sim_faction' if ($sName eq 'sim_faction');
-		}	
+		}
 		# handle wrong classes for weapon in ver 118
 		if ($object->{cse_object}->{version} == 118 && $object->{cse_object}->{script_version} > 5){
 			# soc
 			bless $object->{cse_object}, 'cse_alife_item_weapon_magazined' if $sName =~ /ak74u|vintore/;
 		}
-		fail('unknown clsid '.$class_name.' for section '.$object->{cse_object}->{section_name}) if !UNIVERSAL::can($object->{cse_object}, 'state_import');	
+		fail('unknown clsid '.$class_name.' for section '.$object->{cse_object}->{section_name}) if !UNIVERSAL::can($object->{cse_object}, 'state_import');
 		$object->init_abstract();
 		$object->init_object();
 	}
 	$spawn->print_harm_objects() if $#{$spawn->{harm_objects}} != -1;
-	$spawn->print_excluded_objects() if $#{$spawn->{excluded_objects}} != -1;	
+	$spawn->print_excluded_objects() if $#{$spawn->{excluded_objects}} != -1;
 }
 sub read_graph {
 	my $graph_file;
@@ -1914,7 +1914,7 @@ Converting: universal_acdc.pl -convert <file> -version <new_version> [common_opt
 	-convert <file> - file to convert
 	-version <new_version> - new spawn version
 	common_options - see below
-	
+
 Parsing vertices: universal_acdc.pl -parse <file> -old <old_gvid0> -new <new_gvid0> [-way] [common_options]
 	-parse <file> - file to parse
 	-old <old_gvid0> - old start game_vertex_id
@@ -1927,7 +1927,7 @@ Splitting spawn: universal_acdc.pl -split <file> [-use_graph] [-way] [common_opt
 	-use_graph - use game.graph for graph point recovering
 	-way - force level.game creating
 	common_options - see below
-	
+
 Compare ltx files: universal_acdc.pl -compare <file1,file2> [common_options]
 	-compare <file1,file2> - files to compare
 	common_options - see below

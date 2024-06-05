@@ -180,5 +180,6 @@ Command: `universal_acdc -update <spawn_name> [common_options]`
 - ACDC for SoC: bardak
 - ACDC for CoP: bardak, Kolmogor
 - Everything else: K.D.
+- Binary file and update for new version of Perl: (PSI)[https://github.com/PSIget]
 
 Use and share, crediting the authors.
